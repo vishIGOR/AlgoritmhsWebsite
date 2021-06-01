@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Алгоритм кластеризации</title>
+    <link rel="stylesheet" href="Klast.css" />
+    <link rel="stylesheet" href="../design.css" />
+  </head>
+  <body>
+    <div class="nav__bar">
+      <a href="#" class="nav__trigger">
+        <div class="bars"></div>
+      </a>
+    </div>
+    <div class="mainPart">
+      <div class="part1">
+        <h1>№2. Алгоритм кластеризации</h1>
+        <div class="inputNumOfClust">
+          <label for="numOfClust">Количество кластеров</label>
+          <input name="numOfClast" type="number" id="numOfClast" />
+        </div>
+        <div class="distTypes">
+          <label for="select">Метрика</label>
+          <select name="select" id="select">
+            <option value="1" selected>Евклидово расстояние</option>
+            <option value="2">Квадрат евклидова расстояния</option>
+            <option value="3">Манхэттонское расстояние</option>
+            <option value="4">Расстояние Чебышева</option>
+          </select>
+        </div>
+        <div class="buttons">
+          <button id="generateBtn" class="blob-btn">
+            Запуск алгоритма
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </button>
+          <button id="clearCan" class="blob-btn">
+            Очистить холст
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div class="part2">
+        <canvas class="canvas"></canvas>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <ul class="nav__list">
+        <li>
+          <a href="../MainPage/MainPage.html">Главное меню</a>
+        </li>
+        <li><a href="../A_star/A_star.html">Алгоритм A*</a></li>
+        <li>
+          <a href="../GeneticAlg/GeneticAlg.html"
+            >Генетический алгоритм</a
+          >
+        </li>
+        <li><a href="../Ant/Ant.html">Муравьиный алгоритм</a></li>
+        <li>
+          <a href="../DecisionTree/DecisionTree.html"
+            >Дерево решений</a
+          >
+        </li>
+        <li>
+          <a href="../NeuralNetwork/NeuralNetwork.html"
+            >Нейронная сеть</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <script src="../design.js"></script>
+    <script src="dopfunc.js"></script>
+    <script src="algoMain.js"></script>
+    <script src="appTask.js"></script>
+  </body>
+</html>

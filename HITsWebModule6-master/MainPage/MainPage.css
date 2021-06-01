@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Molle:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:800");
+.text {
+  fill: none;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-dasharray: 70 330;
+  stroke-dashoffset: 0;
+  -webkit-animation: stroke 6s infinite linear;
+  animation: stroke 6s infinite linear;
+}
+.text:nth-child(5n+1) {
+  stroke: #F2385A;
+  -webkit-animation-delay: -1.2s;
+  animation-delay: -1.2s;
+}
+.text:nth-child(5n+2) {
+  stroke: #F5A503;
+  -webkit-animation-delay: -2.4s;
+  animation-delay: -2.4s;
+}
+.text:nth-child(5n+3) {
+  stroke: #E9F1DF;
+  -webkit-animation-delay: -3.6s;
+  animation-delay: -3.6s;
+}
+.text:nth-child(5n+4) {
+  stroke: #56D9CD;
+  -webkit-animation-delay: -4.8s;
+  animation-delay: -4.8s;
+}
+.text:nth-child(5n+5) {
+  stroke: #3AA1BF;
+  -webkit-animation-delay: -6s;
+  animation-delay: -6s;
+}
+
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+/* Other styles */
+body {
+  background: linear-gradient(45deg, #0d0e0e, #a28dac) no-repeat;
+  font: 5em/1 Open Sans, Impact;
+  text-align: center;
+  margin: 0;
+  margin-left: 10%;
+  min-height: 754px;
+}
+
+ svg {
+/*  margin-left: auto;
+  margin-right: auto;
+  margin: 0; */
+  width: 30%;
+  margin-left:-170px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+
+}
+
+.algorithms {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+img {
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+}
+img:hover {
+  transform: scale(1.2);
+}
+.algorithm {
+  text-align: center;
+  flex-basis: 30%;
+  padding: 24px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+a {
+  text-decoration: none;
+}
+.algorithm-name {
+  margin: 0;
+  margin-top: 18px;
+  font-size: 20px;
+  cursor: pointer;
+  font-family:'Courier New', Courier, monospace;
+  letter-spacing: 0.05em;
+  color: #c6c7f3;
+  
+}

@@ -1,0 +1,126 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400|Raleway:300,700);
+:root {
+  --sizeOfCell: 6px;
+  --mainFieldSize: 700px;
+}
+.cell1 {
+  height: 100%;
+  width: var(--sizeOfCell, 6px);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  display: inline-block;
+}
+
+#mainField {
+  border: 3px solid black;
+  display: inline-block;
+  padding: 0;
+  height: 700px;
+  width: 700px;
+  margin: 20px;
+}
+.begin {
+  background-color: rgb(30, 16, 224);
+}
+.end {
+  background-color: rgb(255, 0, 0);
+}
+.wall {
+  background-color: black;
+}
+.notWall {
+  background-color: #8c8b8d;
+}
+.notWall:hover {
+  background-color: rgb(233, 233, 233);
+}
+.currentPoint {
+  background-color: rgb(107, 3, 93);
+}
+.consideredPoint {
+  background-color: rgb(22, 211, 186);
+}
+.string {
+  display: inline-block;
+  line-height: 0;
+  height: var(--sizeOfCell, 6px);
+}
+.onHover:hover {
+  opacity: 80%;
+}
+.path {
+  background-color: #ff04ff;
+}
+.lineSpace {
+  line-height: 0;
+}
+
+input,
+select,
+option {
+  background-color: #ebebebb9;
+}
+
+body{
+  margin:0;
+}
+h1 {
+  font-family: cursive;
+  font-size: 45px;
+  color:#00eaff;
+  letter-spacing: 0.2em;
+  text-shadow: -1px -1px rgb(41, 41, 41), 1px 1px gray, 1.3px 1.3px #6e6e6e,
+    1.6px 1.6px #727272, 1.9px 1.9px #686767, 2.2px 2.2px #616161, 2.5px 2.5px #616161,
+    2.8px 2.8px #616161, 3.1px 3.1px #616161, 3.4px 3.4px #616161, 3.7px 3.7px #616161;
+}
+.text {
+  font-size: 20px;
+  font-family: cursive;
+  color: #b3acaa;
+}
+body.is-froze {
+  overflow: hidden;
+  width: 100vh;
+  height: 100vh;
+}
+.part1 {
+  flex-basis: 50%;
+  margin-left: 40px;
+  height: 100vh;
+}
+.part2{
+  flex-basis: 50%;
+  margin-top: 0px;
+  height: 100vh;
+}
+
+.mainPart {
+  min-height: 735px;
+  display: flex;
+  text-align: center;
+  flex-wrap: nowrap;
+  position: absolute;
+  margin-left: 50px;
+  height: 100%;
+  width: calc(100% - 50px);
+  background: linear-gradient(40deg, #000000, #8d7b94);
+  transition: 0.55s cubic-bezier(0.645, 0.045, 0.355, 1);
+  /* will-change: width, height, opacity, transform; */
+  z-index: 1;
+}
+.mainPart.is-active {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  width: calc(100vw - 50px);
+  opacity: 0.25;
+  transform: scale(0.9) translate3d(60%, 0, 0);
+}
+@media (min-width: 600px) {
+  .mainPart.is-active {
+    transform: scale(0.9) translate3d(40%, 0, 0);
+  }
+}

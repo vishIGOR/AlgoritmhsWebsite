@@ -1,0 +1,231 @@
+
+.nav__bar {
+  position: fixed;
+  width: 60px;
+  height: 100%;
+  border-right: 1px solid rgba(125, 135, 168, 0.25);
+  background-color: #191b22;
+  z-index: 99;
+}
+.nav__trigger {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  padding: 8px 0;
+  margin-top: -20px;
+  transition: 0.2s ease-in-out;
+  z-index: 99;
+}
+.nav__trigger .bars {
+  position: relative;
+}
+.nav__trigger .bars,
+.nav__trigger .bars:before,
+.nav__trigger .bars:after {
+  width: 28px;
+  height: 4px;
+  background-color: #7d87a8;
+  transition: 0.2s ease-in-out;
+  border-radius: 4px;
+}
+.nav__trigger .bars:before,
+.nav__trigger .bars:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+.nav__trigger .bars:before {
+  transform: translateY(-8px);
+}
+.nav__trigger .bars:after {
+  transform: translateY(8px);
+}
+.nav__trigger.is-active {
+  transform: rotate(-45deg);
+}
+.nav__trigger.is-active .bars:before,
+.nav__trigger.is-active .bars:after {
+  transform: translateX(0) rotate(-90deg);
+}
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #191b22;
+  z-index: 0;
+}
+.nav__list {
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  margin-left: 15px;
+  padding-left: 60px;
+  list-style: none;
+  font-family: "Raleway", "Open Sans", sans-serif;
+  transform: translateY(-50%);
+}
+.nav__list a {
+  text-decoration: none; 
+  display: inline-block;
+  color: #7d87a8;
+  line-height: 2;
+  position: relative;
+} 
+.nav__list a::before,
+.nav__list a::after {
+    content: ''; 
+    position: absolute;
+    transition: transform .5s ease;
+    left: -4px;
+    top: 0;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-style: solid;
+    border-color: #55a2aa;
+    box-sizing: border-box;
+}
+.nav__list a::before {
+    border-width: 1px 0 1px 0;
+    transform: scaleX(0);
+}
+.nav__list a::after {
+    border-width: 0 1px 0 1px;
+    transform: scaleY(0);
+}
+.nav__list a:hover::before,
+.nav__list a:hover::after {
+    transform: scale(1, 1);
+}
+
+.nav__list a:hover {
+  text-decoration: none;
+  color: #b1b7cb;
+} 
+.nav__list a.is-active {
+  text-decoration: none;
+  color: #d2d5e1;
+}
+@media (min-width: 600px) {
+  .nav__list a {
+    font-size: 1.5rem;
+  }
+} 
+
+/*          шаблон для кнопок           */
+.buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+.blob-btn {
+  z-index: 1;
+  position: relative;
+  padding: 10px 20px;
+  margin-left: 20px; 
+  margin-right: 20px; 
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #0fe0f5;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transition: color 0.5s;
+  cursor: pointer;
+}
+.blob-btn:before {
+  box-sizing: border-box;
+  content: "";
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 6px solid #0fe0f5;
+}
+.blob-btn:after {
+  box-sizing: border-box;
+  content: "";
+  z-index: -2;
+  position: absolute;
+  left: 9px;
+  top: 9px;
+  width: 100%;
+  height: 100%;
+  border: 6px solid rgba(156, 156, 156, 0.288);
+  transition: all 0.3s 0.2s;
+}
+.blob-btn:hover {
+  color: rgb(117, 117, 117);
+}
+.blob-btn:hover:after {
+  box-sizing: border-box;
+  transition: all 0.3s;
+  left: 0;
+  top: 0;
+}
+.blob-btn__inner {
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.blob-btn__blobs {
+  position: relative;
+  display: block;
+  height: 100%;
+  filter: url("#goo");
+}
+.blob-btn__blob {
+  position: absolute;
+  top: 6px;
+  width: 25%;
+  height: 100%;
+  background: #0fe0f5;
+  border-radius: 100%;
+  transform: translate3d(0, 300%, 0) scale(3);
+  transition: transform 0.45s;
+}
+@supports (filter: url("#goo")) {
+  .blob-btn__blob {
+    transform: translate3d(0, 150%, 0) scale(1.4);
+  }
+}
+.blob-btn__blob:nth-child(1) {
+  left: 0%;
+  transition-delay: 0s;
+}
+.blob-btn__blob:nth-child(2) {
+  left: 30%;
+  transition-delay: 0.08s;
+}
+.blob-btn__blob:nth-child(3) {
+  left: 60%;
+  transition-delay: 0.16s;
+}
+.blob-btn__blob:nth-child(4) {
+  left: 90%;
+  transition-delay: 0.24s;
+}
+.blob-btn:hover .blob-btn__blob {
+  transform: translateZ(0) scale(1.7);
+}
+@supports (filter: url("#goo")) {
+  .blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.7);
+  }
+}

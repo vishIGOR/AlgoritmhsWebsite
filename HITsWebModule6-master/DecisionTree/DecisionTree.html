@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Дерево решений</title>
+    <link rel="stylesheet" href="DecisionTree.css" />
+    <link rel="stylesheet" href="../design.css" />
+  </head>
+
+  <body>
+    <div class="nav__bar">
+      <a href="#" class="nav__trigger">
+        <div class="bars"></div>
+      </a>
+    </div>
+    <div class="mainPart">
+      <div class="part1">
+        <h1>№5. Дерево решений</h1>
+        <p class="text">
+          Для обучения дерева решений введите в поле CSV-текст. Первая строка
+          должна состоять из свойств, которые будут представлены в столбцaх
+          ниже. Крайнее правое слово будет являться свойством, по которому будет
+          вестись классификация.
+        </p>
+        <p class="text">
+          Настройка гиперпараметров позволяет вам выбрать между точностью и
+          сбалансированностью дерева.
+        </p>
+        <form class="text" methpod="post" form="action" display="inline">
+          <form methpod="post" form="action" display="inline">
+            <label for="control_panel"
+              >Выберите настройку гиперпараметров</label
+            >
+            <select id="control_panel">
+              <option value="1">Максимальная точность</option>
+              <option value="2">Средняя точность</option>
+              <option value="3">Низкая точность</option>
+              <option value="4">Ввести вручную</option>
+            </select>
+          </form>
+          <form class="text" methpod="post" form="action" display="inline">
+            <label for="maxDepth">Максимальная глубина дерева</label>
+            <input
+              type="number"
+              title="Максимальная глубина дерева"
+              min="1"
+              name="hyperparameter"
+              id="maxDepth"
+              disabled="disabled"
+            />
+            <br />
+            <label for="minSamplesLeaf"
+              >Число объектов, при котором создается лист</label
+            >
+            <input
+              type="number"
+              title="Число объектов, при котором создается лист"
+              min="1"
+              name="hyperparameter"
+              id="minSamplesLeaf"
+              disabled="disabled"
+            />
+            <br />
+            <label for="minImpurityDecrease"
+              >Число, определяющее максимальное значение impurity для создания
+              листа</label
+            >
+            <input
+              type="number"
+              title="Значение, определяющее максимальное значение impurity для создания листа"
+              min="0"
+              max="1"
+              step="0.025"
+              name="hyperparameter"
+              id="minImpurityDecrease"
+              disabled="disabled"
+            />
+          </form>
+          <br />
+        </form>
+      </div>
+
+      <div class="part2">
+        <textarea
+          id="CSVtext"
+          placeholder="Введите данные всех элементов
+Например:
+Colour,Diam,fruit
+Green,3,Apple
+Yellow,3,Apple
+Red,1,Grape
+Yellow,3,Lemon"
+          cols="70"
+          rows="7"
+          required
+        ></textarea>
+        <br />
+        <div class="buttons">
+          <button id="sendButton" class="blob-btn" display="inline">
+            Отправить данные
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </button>
+        </div>
+        <br />
+        <textarea
+          id="predictionText"
+          placeholder="Введите данные элемента для отображения его пути
+Например:
+Green,3"
+          cols="70"
+          rows="7"
+          required
+        ></textarea>
+        <br />
+        <div class="buttons">
+          <button id="predictionButton" class="blob-btn" display="inline">
+            Показать путь
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="part3">
+        <ul id="treeID"></ul>
+      </div>
+    </div>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li ><a href="../MainPage/MainPage.html">Главное меню</a></li>
+        <li ><a href="../A_star/A_star.html">Алгоритм А*</a></li>
+        <li><a href="../Klast/Klast.html">Алгоритм кластеризации</a></li>
+        <li><a href="../GeneticAlg/GeneticAlg.html">Генетический алгоритм</a></li>
+        <li><a href="../Ant/Ant.html">Муравьиный алгоритм</a></li>
+        <li><a href="../NeuralNetwork/NeuralNetwork.html">Нейронная сеть</a></li>
+      </ul>
+    </nav>
+    <script src="../design.js"></script>
+    <script src="buckets.js"></script>
+    <script src="papaparse.js"></script>
+    <script src="DecisionTree.js"></script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>A*</title>
+    <link rel="stylesheet" href="A_star.css" />
+    <link rel="stylesheet" href="../design.css" />
+  </head>
+  <body>
+    <div class="nav__bar">
+      <a href="#" class="nav__trigger">
+        <div class="bars"></div>
+      </a>
+    </div>
+    <div class="mainPart">
+      <div class="part1">
+        <h1 class="H">№1. Алгоритм А*</h1>
+        <p class="text">
+          Алгоритм поиска по первому наилучшему совпадению на графе, который
+          находит маршрут с наименьшей стоимостью от начальной вершины к другой
+          .
+        </p>
+        <p class="text">
+          В нашей реализации также применяется алгоритм Прима для создания
+          лабиринта
+        </p>
+        <form methpod="post" form="action" display="inline">
+          <label for="maze_size" class="text">Введите размер карты:</label>
+          <input
+            type="number"
+            min="3"
+            max="300"
+            name="maze_size"
+            id="maze_size"
+          />
+          <select id="map_form_selection">
+            <option value="1">Пустая карта</option>
+            <option value="2">Лабиринт</option>
+            <option value="3">Пещеры</option>
+          </select>
+          <br />
+          <div class="buttons">
+            <button id="launch_maze_creation" class="blob-btn" display="inline">
+              Создать карту
+              <span class="blob-btn__inner">
+                <span class="blob-btn__blobs">
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                </span>
+              </span>
+            </button>
+            <button id="launch_A_star" class="blob-btn" display="inline">
+              Найти путь
+              <span class="blob-btn__inner">
+                <span class="blob-btn__blobs">
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                </span>
+              </span>
+            </button>
+          </div>
+        </form>
+        <form methpod="post" form="action" display="inline">
+          <label for="control_panel" class="text"
+            >Нажмите на клетку карты, чтобы сделать её:</label
+          >
+          <select id="control_panel" disabled="disabled">
+            <option value="0">-</option>
+            <option value="1">Началом</option>
+            <option value="2">Концом</option>
+            <option value="3">Пустой клеткой</option>
+            <option value="4">Стеной</option>
+          </select>
+        </form>
+        
+      </div>
+
+      <div class="part2">
+        <section id="mainField"></section>
+      </div>
+    </div>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li ><a href="../MainPage/MainPage.html">Главное меню</a></li>
+        <li><a href="../Klast/Klast.html">Алгоритм кластеризации</a></li>
+        <li><a href="../GeneticAlg/GeneticAlg.html">Генетический алгоритм</a></li>
+        <li><a href="">Муравьиный алгоритм</a></li>
+        <li><a href="../DecisionTree/DecisionTree.html">Дерево решений</a></li>
+        <li><a href="../NeuralNetwork/NeuralNetwork.html">Нейронная сеть</a></li>
+      </ul>
+    </nav>
+    <script src="../design.js"></script>
+    <script src="buckets.js"></script>
+    <script src="maze_generation.js"></script>
+  </body>
+</html>
